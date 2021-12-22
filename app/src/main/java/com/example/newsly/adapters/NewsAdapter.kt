@@ -31,6 +31,13 @@ class NewsAdapter(val context : Context, val articles : List<Article>) : Recycle
 
         holder.newsTitle.text = article.title
         holder.newsDescription.text = article.description
+
+        if (article.author == null) {
+            holder.newAuthor.text = article.author
+        }
+        else {
+            holder.newAuthor.text = "By " +article.author
+        }
         Glide.with(context).load(article.urlToImage).into(holder.newsImage)
 
         holder.itemView.setOnClickListener{
@@ -51,5 +58,6 @@ class NewsAdapter(val context : Context, val articles : List<Article>) : Recycle
         var newsImage: ImageView = itemView.findViewById(R.id.newsImage)
         var newsTitle: TextView = itemView.findViewById(R.id.newsTitle)
         var newsDescription: TextView = itemView.findViewById(R.id.newsDescription)
+        var newAuthor: TextView = itemView.findViewById(R.id.newsAuthor)
     }
 }

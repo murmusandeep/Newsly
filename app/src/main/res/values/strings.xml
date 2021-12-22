@@ -3,4 +3,5 @@
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="newsly">Newsly</string>
+    <string name="author">Author</string>
 </resources>
